@@ -8,5 +8,8 @@
 ## Dependencies:
 * Dmenu
 * Rofi
-* xdg-open or the app launcher of your choice (If not xdg-open replace the "xdg-open" command in the script with your preference eg kde-open or gnome-open)
+* kde-open or the app launcher of your choice (If not kde-open replace the "kde-open" command in the script with your preference eg xdg-open or gnome-open)
 
+## Usage:
+- `rofi-fm <dir name>`  eg: `rofi-fm $HOME` To launch in your home directory
+- `rofi`  Launches in the last used directory  
