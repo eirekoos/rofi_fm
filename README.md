@@ -1,2 +1,12 @@
-# rofi_fm
-A simple Rofi File Selector script
+# Rofi / DMenu file selector menu script
+## A simple Rofi File Selector script
+
+* Copy the rofi_fm script to a directory of your liking
+* Update the SCRIPT_DIR variable in the script to the directory where you have installed the script
+* Make the script executable
+
+## Dependencies:
+* Dmenu
+* Rofi
+* kde-open or the app launcher of your choice (If not kde-open replace the "kde-open" command in the script with your preference)
+
