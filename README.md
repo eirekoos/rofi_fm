@@ -8,5 +8,5 @@
 ## Dependencies:
 * Dmenu
 * Rofi
-* kde-open or the app launcher of your choice (If not kde-open replace the "kde-open" command in the script with your preference)
+* xdg-open or the app launcher of your choice (If not xdg-open replace the "xdg-open" command in the script with your preference eg kde-open or gnome-open)
 
