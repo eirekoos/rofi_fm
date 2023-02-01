@@ -26,25 +26,22 @@ dirOrNot=${fileDisc:0:1}
 if [[ ! -z $selected ]]; then
     if [ $fileName == "<UP_DIR>" ]
     then
-        cd $1/../.
+        cd $workdir/../.
         paramtoSend=$(pwd)
         $SCRIPT_DIR/rofi_fm $paramtoSend;
     else
         if [[ $dirOrNot == "d" ]]
         then
-            $SCRIPT_DIR/rofi_fm $1/$fileName;
+            $SCRIPT_DIR/rofi_fm $workdir/$fileName;
         else
             if [ $fileName == "<HOME>" ]
             then
                 $SCRIPT_DIR/rofi_fm $HOME;
             else
                 echo $1 >$HOME/rofi_fm_last
-                xdg-open $1/$fileName
+                ## If you prefer  app launcher other than kde-open replace kde-open below with your preference eg xdg-open gnome-open etc
+                kde-open $1/$fileName
             fi
         fi
     fi
 fi
-
-
-
-
