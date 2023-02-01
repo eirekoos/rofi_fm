@@ -40,7 +40,7 @@ if [[ ! -z $selected ]]; then
             else
                 echo $1 >$HOME/rofi_fm_last
                 ## If you prefer  app launcher other than kde-open replace kde-open below with your preference eg xdg-open gnome-open etc
-                kde-open $1/$fileName
+                kde-open $workdir/$fileName
             fi
         fi
     fi
