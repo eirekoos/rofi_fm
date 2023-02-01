@@ -1,7 +1,7 @@
 # Rofi / DMenu file selector menu script
 ## A simple Rofi File Selector script
 
-* Copy the rofi_fm script to a directory of your liking
+* Copy the rofi_fm script to a directory of your choice
 * Update the SCRIPT_DIR variable in the script to the directory where you have installed the script
 * Make the script executable
 
