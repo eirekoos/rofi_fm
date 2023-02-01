@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# dmenu theming
+lines="-l 30"
+font="-fn Inconsolata-13"
+colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
+
+## Change SCRIPT_DIR variable below to the location where you have installed the script ####
+SCRIPT_DIR=$(echo $HOME/.xmonad/scripts)
+
+if [ -z $1 ]
+then
+    cd $(cat $HOME/rofi_fm_last);workdir=$(pwd)
+else
+    cd $(echo $1);workdir=$(pwd)
+fi
+selected="$(ls -la $workdir|sed '2s/.*/<HOME>/' |sed '3s/.*/<UP_DIR>/' |sed -s '1d' |  \
+            rofi  -dmenu dmenu -i -p "$workdir :Type to search" \
+            $lines $colors $font | \
+            awk '{print $9" "$1}')"; 
+
+fileName=$(echo $selected |awk -F " " '{print $1}')
+fileDisc=$(echo $selected |awk -F " " '{print $2}')
+dirOrNot=${fileDisc:0:1}
+
+if [[ ! -z $selected ]]; then
+    if [ $fileName == "<UP_DIR>" ]
+    then
+        cd $1/../.
+        paramtoSend=$(pwd)
+        $SCRIPT_DIR/rofi_fm $paramtoSend;
+    else
+        if [[ $dirOrNot == "d" ]]
+        then
+            $SCRIPT_DIR/rofi_fm $1/$fileName;
+        else
+            if [ $fileName == "<HOME>" ]
+            then
+                $SCRIPT_DIR/rofi_fm $HOME;
+            else
+                echo $1 >$HOME/rofi_fm_last
+                kde-open $1/$fileName
+            fi
+        fi
+    fi
+fi
+
+
+
+
