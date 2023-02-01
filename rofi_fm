@@ -39,7 +39,7 @@ if [[ ! -z $selected ]]; then
                 $SCRIPT_DIR/rofi_fm $HOME;
             else
                 echo $1 >$HOME/rofi_fm_last
-                kde-open $1/$fileName
+                xdg-open $1/$fileName
             fi
         fi
     fi
