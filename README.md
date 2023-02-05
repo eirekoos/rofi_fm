@@ -12,4 +12,4 @@
 
 ## Usage:
 - `rofi-fm <dir name>`  eg: `rofi-fm $HOME` To launch in your home directory
-- `rofi`  Launches in the last used directory  
+- `rofi-fm`  Launches in the last used directory  
